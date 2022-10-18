@@ -1,0 +1,162 @@
+.card > header{
+    background-color: #288088;
+    border: solid 2px #45adad;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 50px 50px 0 0;
+   
+}
+.card{
+    border-radius: 50px 50px 0 0;
+
+}
+@keyframes grow {
+    0% {width: 25px;
+    opacity: 0; }
+    50% {
+        width: 225px;
+        opacity: 0.5;
+    }
+    100%{
+        width: 475px;
+        opacity: 1;
+    }
+
+}
+
+#logo{
+    animation: grow 5s linear;
+    max-width: 475px;
+    justify-content: center;
+
+}
+body{
+    font-family: "Poppins", serif;
+    background: #f1f1f1 url('/images/concrete_seamless.png');
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+.nav_links{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+a, a:visited, a:active a:hover{
+    color: blue;
+    text-decoration: none;
+}
+.card{
+    flex-basis: 450px;
+
+}
+.pricing{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.gallery > img{
+    display: flex;
+    border: solid 10px #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+@media screen and (min-width: 800px){
+    .nav_links{
+        justify-content: flex-end;
+        flex-direction: row;
+        align-items: flex-end;
+        top: 0;
+      
+
+        
+    }
+  
+    .pricing{
+        flex-basis: 275px;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        
+
+    }
+    .card{
+      flex-basis: 275px;
+      flex-grow: 0 2;
+    }
+   header:not(.card>header) {
+
+    position: sticky;
+    top: 0;
+
+   }
+ 
+    
+
+}
+
+
+@media screen and (prefers-reduced-motion: reduce){
+    html{
+        scroll-behavior: auto; /* Removes scroll animation */
+    }
+  
+    .skip a{
+      -webkit-transition: none; /* sets to default setting */
+      transition: none;        /* sets to default setting */
+     }
+  
+    /*Turn off parallax*/
+    header{
+      background-attachment: initial;
+    }
+    #logo{
+        max-width: 475px;
+        justify-content: center;
+        animation: none !important;
+
+
+    }
+  }
+  
+  @media print{
+    body{
+        font-family: Arial, Helvetica;
+        background: #f1f1f1;
+    }
+    .nav_links{
+        justify-content: space-evenly;
+        flex-direction: row;
+        
+    }
+    #logo{
+        display: flex;
+        max-width: 475px;
+        align-items: center;
+        animation: none !important;
+
+    }
+    .pricing{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+    .gallery{
+        display: none ;
+    }
+
+  }
